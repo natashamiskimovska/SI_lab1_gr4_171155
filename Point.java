@@ -6,13 +6,20 @@ class Point {
 	String boja;
 
 	//TODO constructor
-	public Point(double x, double y, String boja){
+	public Point(double x, double y, String boja, String id){
 		this.x = x;
 		this.y = y;
 		this.boja = boja;
+		this.id = id;
 	}
 
 	//TODO setters and getters
+    public void setId(String id){
+	    this.id = id;
+    }
+    public String getId(){
+	    return id;
+    }
 	public void setX(double x){
 		this.x = x;
 	}
@@ -50,9 +57,20 @@ class Point {
 
 	public void draw () {
 		//TODO
-		System.out.printl(x, y);
+		System.out.println(x, y);
 	}
 
 
 
+}
+class Canvas{
+    List<Points> points = new ArrayList<>();
+
+    public void contains(double x, double y){
+        boolean containsElement = points.contains(x,y);
+        System.out.println(containsElement);
+    }
+    public void deleteAll(){
+        points.clear();
+    }
 }
